@@ -32,18 +32,39 @@ $(document).ready(function() {
         data = await getPromiseOfAllProducts();
         var tr;
         $.each(data, function(k, record) {
-          console.log(record)
           tr = $("<tr></tr>");
-          tr.append("<td>" + record.id + "</td>");
-          tr.append("<td>" + record.name + "</td>");
-          tr.append("<td>" + record.description + "</td>");
-          tr.append("<td><div class='btn-group' role='group' aria-label='Basic outlined example'><button type='button' class='btn btn-outline-light dec'>-</button><button type='button' class='btn btn-outline-light' style='width:100px' type='number' value='0' disabled>0</button><button type='button' class='btn btn-outline-light inc'>+</button></div></td>");
-          tr.append("<td>" + record.price+"€" + "</td>");
+          tr.append("<td id='id'>" + record.id + "</td>");
+          tr.append("<td id='name'>" + record.name + "</td>");
+          tr.append("<td id='description'>" + record.description + "</td>");
+          tr.append("<td id='menge'>" +
+              "<div class='btn-group' role='group' aria-label='Basic outlined example'>" +
+              "<button type='button' class='btn btn-outline-light dec'>-</button>" +
+              "<button type='button' class='btn btn-outline-light' style='width:100px' type='number' value='0' id='value' disabled>0</button>" +
+              "<button type='button' class='btn btn-outline-light inc'>+</button>" +
+              "</div></td>");
+          tr.append("<td id='price'>" + record.price+"€" + "</td>");
           $("#productsTable").append(tr);
         });
         IncDec();
     }
 });
+
+function bestelle(){
+    let rows = document.getElementsByTagName("tr")
+    let bestellung = {}
+
+
+    for(let i = 1; i<rows.length; i++){
+        console.log(rows[i])
+    }
+
+    fetch("http://localhost:8080/delivery", {
+        method: 'POST',
+        headers: {'Content-Type': 'application/json'},
+        body: JSON.stringify(bestellung)
+    })
+
+}
 
   
 /*
