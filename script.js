@@ -1,6 +1,6 @@
 $(document).ready(function() {
 
-      getData();
+      putDataInTable();
 
       function IncDec() {
         decs = document.querySelectorAll(".dec");
@@ -20,32 +20,32 @@ $(document).ready(function() {
           })
         })
       }
-      
-      function getData() {
-        $.ajax({
-          //url: "/customerService/getResponse.json",
-          url: "/getResponse.json",
-          method: 'GET',
-          dataType: "json",
-          error: function(xhr, status, error) {
-            console.log(status, error);
-          },
-          success: function(json) {
-            var tr;
-            $.each(json, function(k, record) {
-              //console.log(record)
-              tr = $("<tr></tr>");
-              tr.append("<td>" + record.id + "</td>");
-              tr.append("<td>" + record.name + "</td>");
-              tr.append("<td>" + record.desc + "</td>");
-              tr.append("<td><div class='btn-group' role='group' aria-label='Basic outlined example'><button type='button' class='btn btn-outline-light dec'>-</button><button type='button' class='btn btn-outline-light' style='width:100px' type='number' value='0' disabled>0</button><button type='button' class='btn btn-outline-light inc'>+</button></div></td>");
-              tr.append("<td>" + record.price+"€" + "</td>");
-              $("#productsTable").append(tr);
-            });
-            IncDec();
-          }
+  function getPromiseOfAllProducts() {
+    return Promise.resolve($.ajax({
+      url: "http://localhost:8081/products",
+      method: 'GET',
+      dataType: "json"
+    }));
+  }
+  function putDataInTable() {
+    let maybeData = getPromiseOfAllProducts();
+    console.log(maybeData);
+      maybeData.catch(onerror)
+      maybeData.then(() => function (json) {
+        var tr;
+        $.each(json, function(k, record) {
+          console.log(record)
+          tr = $("<tr></tr>");
+          tr.append("<td>" + record.id + "</td>");
+          tr.append("<td>" + record.name + "</td>");
+          tr.append("<td>" + record.desc + "</td>");
+          tr.append("<td><div class='btn-group' role='group' aria-label='Basic outlined example'><button type='button' class='btn btn-outline-light dec'>-</button><button type='button' class='btn btn-outline-light' style='width:100px' type='number' value='0' disabled>0</button><button type='button' class='btn btn-outline-light inc'>+</button></div></td>");
+          tr.append("<td>" + record.price+"€" + "</td>");
+          $("#productsTable").append(tr);
         });
-      }
+        IncDec();
+      })
+    }
 });
 
   

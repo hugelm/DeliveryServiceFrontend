@@ -7,7 +7,7 @@
   },
   {
     "id": 2,
-    "name": "Döner kl.",
+    "productname": "Döner kl.",
     "desc": "...",
     "price": 4.00
   },
@@ -22,6 +22,6 @@
     "name": "Pommes",
     "desc": "...",
     "price": 2.50
-}
+  }
 ]
   
