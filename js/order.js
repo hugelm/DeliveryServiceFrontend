@@ -55,12 +55,14 @@ $(document).ready(function() {
 function order(){
     //let examplePOST = { name: "Aurelius", items: [{item: 1},{item: 1},{item: 1},{item: 2}], adress: {postcode: "42069", street: "JavaEnterprise", housenumber: "187"}}
     //console.log(JSON.stringify(examplePOST))
-
+  
     let order = {};
+    let name = document.getElementById("name").value
+    let items = []
     let zipcode = document.getElementById("zipcode").value
     let street = document.getElementById("street").value
     let housenumber = document.getElementById("housenumber").value
-    let items = []
+
     let rows = document.getElementsByTagName("tr")
     for(let i = 1; i<rows.length; i++){
       //console.log("Produkt "+i+" bestelle "+k+" mal");
@@ -69,12 +71,13 @@ function order(){
         items.push({item: i})
       }
     }
-    order.name = document.getElementById("name")
+    order.name = name
     order.items = items
     order.adress = {postcode: zipcode, street: street, housenumber:  housenumber}
 
     console.log(order)
     console.log(JSON.stringify(order))
+
 
     fetch("http://localhost:8080/delivery", {
         method: 'POST',
