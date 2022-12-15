@@ -56,10 +56,57 @@
     <tbody id="productsTable">
     </tbody>
   </table>
-<button id="bestelle" onclick="bestelle()">Bestellen</button>
 
+  <!-- order information -->
+  <div class="card-body p-4 p-md-5">
+    <div class="row">
+      <div class="col-md-3">
 
-  <script src="../js/order.js"></script>
+        <div class="form-outline">
+          <input type="text" id="name" class="form-control form-control-lg" />
+          <label class="form-label" for="firstName">Name</label>
+        </div>
+
+      </div>
+      <div class="col-md-3">
+
+        <div class="form-outline">
+          <input type="text" id="phone" class="form-control form-control-lg" />
+          <label class="form-label" for="lastName">Telefonnummer</label>
+        </div>
+
+      </div>
+      <div class="col-md-2">
+
+        <div class="form-outline">
+          <input type="text" id="zipcode" class="form-control form-control-lg" />
+          <label class="form-label" for="lastName">Postleitzahl</label>
+        </div>
+
+      </div>
+      <div class="col-md-3">
+
+        <div class="form-outline">
+          <input type="text" id="street" class="form-control form-control-lg" />
+          <label class="form-label" for="lastName">Straße</label>
+        </div>
+
+      </div>
+      <div class="col-md-1">
+
+        <div class="form-outline">
+          <input type="text" id="housenumber" class="form-control form-control-lg" />
+          <label class="form-label" for="lastName">Hausnummer</label>
+        </div>
+
+      </div>
+    </div>
+    <div class="row">
+        <button onclick="order()" type="button" class="btn btn-success btn-lg btn-block">Bestellen</button>
+    </div>
+  </div>
+
+<script src="../js/order.js"></script>
 
 </body>
 </html> 
