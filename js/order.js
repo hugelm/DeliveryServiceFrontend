@@ -73,7 +73,7 @@ function order(){
     }
     order.name = name
     order.items = items
-    order.adress = {postcode: zipcode, street: street, housenumber:  housenumber}
+    order.address = {postcode: zipcode, street: street, housenumber:  housenumber}
 
     console.log(order)
     console.log(JSON.stringify(order))
