@@ -60,18 +60,21 @@ $(document).ready(function() {
       product.price = price
       console.log(product)
       console.log(JSON.stringify(product))
-  
-  
+
       fetch("http://localhost:8081/product", {
           method: 'POST',
           headers: {'Content-Type': 'application/json'},
           body: JSON.stringify(product)
       })
-
-      setTimeout(() => {
-        document.location.reload();
-      }, 500);
-      
-  
+          .then( response => {
+            if (response.ok) { 
+                alert("Produkt wurde anglegt"),
+                setTimeout(() => {
+                    document.location.reload();
+                }, 100);
+            } else { 
+                alert("Fehler: Produkt konte nicht anglegt werden");
+            }
+          })
   }
   
