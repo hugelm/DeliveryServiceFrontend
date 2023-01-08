@@ -39,6 +39,9 @@ $(document).ready(function() {
             tr.append("<td>" + record.name + "</td>");
             tr.append("<td>" + record.description + "</td>");
             tr.append("<td>" + record.price +"€" + "</td>");
+            tr.append("<td>" +
+            "<button type='button' onclick='deleteProduct(this.id)' class='btn btn-danger' id=" + record.id + ">Löschen</button>" +
+            "</div></td>");
             $("#productsTable").append(tr);
           });
           IncDec();
@@ -73,8 +76,24 @@ $(document).ready(function() {
                     document.location.reload();
                 }, 100);
             } else { 
-                alert("Fehler: Produkt konte nicht anglegt werden");
+                alert("Fehler: Produkt konte nicht angelegt werden");
             }
           })
   }
   
+  function deleteProduct(id){
+
+    fetch("http://localhost:8081/product?id="+id, {
+        method: 'DELETE',
+    })
+        .then( response => {
+          if (response.ok) { 
+              alert("Produkt wurde gelöscht"),
+              setTimeout(() => {
+                  document.location.reload();
+              }, 100);
+          } else { 
+              alert("Fehler: Produkt konte nicht gelöscht werden");
+          }
+        })
+}
