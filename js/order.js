@@ -22,7 +22,7 @@ $(document).ready(function() {
   }
 
   async function getPromiseOfAllProducts() {
-        return fetch('http://localhost:8081/products', {
+      return fetch('http://localhost:8081/products', {
         method: 'GET',
       })
         .then(function(response) {
@@ -53,6 +53,7 @@ $(document).ready(function() {
 });
 
 function order(){
+
     //let examplePOST = { name: "Aurelius", items: [{item: 1},{item: 1},{item: 1},{item: 2}], adress: {postcode: "42069", street: "JavaEnterprise", housenumber: "187"}}
     //console.log(JSON.stringify(examplePOST))
   
@@ -64,11 +65,15 @@ function order(){
     let housenumber = document.getElementById("housenumber").value
 
     let rows = document.getElementsByTagName("tr")
-    for(let i = 1; i<rows.length; i++){
-      //console.log("Produkt "+i+" bestelle "+k+" mal");
-      k = document.getElementById(i.toString()).value
-      for(let j = 0; j < k; j++){
-        items.push({item: i})
+    for(let i = 1; i<99; i++){
+    //for(let i = 1; i<rows.length; i++){
+      product = document.getElementById(i.toString());
+      if (product){
+        k = product.value;
+        //console.log("Produkt "+i+" bestelle "+k+" mal");
+        for(let j = 0; j < k; j++){
+          items.push({item: i})
+        }
       }
     }
     order.name = name
@@ -78,11 +83,20 @@ function order(){
     console.log(order)
     console.log(JSON.stringify(order))
 
-
     fetch("http://localhost:8080/delivery", {
         method: 'POST',
-        headers: {'Content-Type': 'application/json'},
-        body: JSON.stringify(order)
+        body: JSON.stringify(order),
+        headers: {"Content-type": "application/json; charset=UTF-8"},
     })
+      .then( response => {
+        if (response.ok) { 
+            alert("Bestellung wurde aufgegeben"),
+            setTimeout(() => {
+                document.location.reload();
+            }, 100);
+        } else { 
+            alert("Fehler: Bestellung konnte nicht versendet werden");
+        }
+      })
 
 }

@@ -24,10 +24,10 @@
         <div class="collapse navbar-collapse" id="navbarExample01">
           <ul class="navbar-nav me-auto mb-2 mb-lg-0">
             <li class="nav-item active">
-                <a class="nav-link text-white" href="./order.html">Speisekarte</a>
-              </li>
+              <a class="nav-link text-white" href="./order.html">Speisekarte</a>
+            </li>
             <li class="nav-item">
-              <a class="nav-link text-white" href="./overview.html">Meine Bestellungen</a>
+              <a class="nav-link text-white" aria-current="page" href="./overview.html">Meine Bestellungen</a>
             </li>
             <li class="nav-item">
               <a class="nav-link text-white" href="#">Alle Bestellungen</a>
@@ -36,7 +36,7 @@
               <a class="nav-link text-white" href="#">Kontakt</a>
             </li>
             <li class="nav-item active">
-                <a class="nav-link text-white" aria-current="page" href="./product.html">Produkteverwaltung</a>
+              <a class="nav-link text-white" href="./product.html">Produkteverwaltung</a>
             </li>
           </ul>
         </div>
@@ -44,57 +44,45 @@
     </nav>
   </header>
   <div class="p-5 text-center bg-dark">
-    <h1 class="mb-3 text-white">aktuell im Verkauf:</h1>
+    <h1 class="mb-3 text-white">Meine Bestellungen</h1>
   </div>
+    <!-- order information -->
+    <div class="card-body p-4 p-md-5 bg-dark text-white">
+        <div class="row">
+          <div class="col-md-8">
+    
+            <div class="form-outline">
+              <input type="text" id="name" class="form-control form-control-lg" />
+              <label class="form-label" for="firstName">Name</label>
+            </div>
+    
+          </div>
+          <div class="col-md-4">
+    
+            <div class="form-outline">
+              <input type="text" id="zipcode" class="form-control form-control-lg" />
+              <label class="form-label" for="lastName">Postleitzahl</label>
+            </div>
+    
+          </div>
+        </div>
+        <div class="row">
+            <button onclick="order()" type="button" class="btn btn-success btn-lg btn-block">Bestellungen abfragen</button>
+        </div>
+      </div>
   <table class="table table-hover table-dark">
     <thead>
       <tr>
         <th scope="col" style="width: 10%">#</th>
-        <th scope="col" style="width: 10%">Gericht</th>
-        <th scope="col" style="width: 50%">Beschreibung</th>
+        <th scope="col" style="width: 85%">Gerichte</th>
         <th scope="col" style="width: 5%">Preis</th>
-        <th scope="col" style="width: 5%"></th>
       </tr>
     </thead>
     <tbody id="productsTable">
     </tbody>
   </table>
 
-  <!-- order information -->
-  <div class="card-body p-4 p-md-5 bg-dark text-white">
-    <div class="row">
-      <div class="col-md-3">
-
-        <div class="form-outline">
-          <input type="text" id="name" class="form-control form-control-lg" />
-          <label class="form-label" for="name">Produktname</label>
-        </div>
-
-      </div>
-      <div class="col-md-7">
-
-        <div class="form-outline">
-          <input type="text" id="desc" class="form-control form-control-lg" />
-          <label class="form-label" for="desc">Beschreibung</label>
-        </div>
-
-      </div>
-      <div class="col-md-2">
-
-        <div class="form-outline">
-          <input type="text" id="price" class="form-control form-control-lg" />
-          <label class="form-label" for="price">Preis in EUR</label>
-        </div>
-
-     </div>
-
-    </div>
-    <div class="row">
-        <button onclick="addProduct()" type="button" class="btn btn-success btn-lg btn-block">neues Produkt anlegen</button>
-    </div>
-  </div>
-
-<script src="../js/product.js"></script>
+<script src="../js/overview.js"></script>
 
 </body>
 </html> 
