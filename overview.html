@@ -17,13 +17,13 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <ul class="navbar-nav me-auto mb-2 mb-lg-0">
             <li class="nav-item">
-              <a class="nav-link" href="./order.html">Speisekarte</a>
+              <a class="nav-link" href="./index.html">Speisekarte</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="./myorder.html">Meine Bestellungen</a>
+              <a class="nav-link" href="./myorder.html">Meine Bestellungen</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="./overview.html">Bestellübersicht</a>
+              <a class="nav-link active" aria-current="page" href="./overview.html">Bestellübersicht</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="./product.html">Produktverwaltung</a>
@@ -38,38 +38,18 @@
     </nav>
   </header>
   <div class="p-5 text-center bg-dark">
-    <h1 class="mb-3 text-white">Meine Bestellungen</h1>
+    <h1 class="mb-3 text-white">aktuelle Bestellungen:</h1>
   </div>
-    <!-- order information -->
-    <div class="card-body p-4 p-md-5 bg-dark text-white">
-        <div class="row">
-          <div class="col-md-8">
-    
-            <div class="form-outline">
-              <input type="text" id="name" class="form-control form-control-lg" />
-              <label class="form-label" for="firstName">Name</label>
-            </div>
-    
-          </div>
-          <div class="col-md-4">
-    
-            <div class="form-outline">
-              <input type="text" id="zipcode" class="form-control form-control-lg" />
-              <label class="form-label" for="lastName">Postleitzahl</label>
-            </div>
-    
-          </div>
-        </div>
-        <div class="row">
-            <button onclick="order()" type="button" class="btn btn-success btn-lg btn-block">Bestellungen abfragen</button>
-        </div>
-      </div>
   <table class="table table-hover table-dark">
     <thead>
       <tr>
-        <th scope="col" style="width: 10%">#</th>
-        <th scope="col" style="width: 85%">Gerichte</th>
+        <th scope="col" style="width: 3%">#</th>
+        <th scope="col" style="width: 12%">Name</th>
+        <th scope="col" style="width: 40%">Gerichte</th>
+        <th scope="col" style="width: 15%">Adresse</th>
+        <th scope="col" style="width: 10%">Tel.</th>
         <th scope="col" style="width: 5%">Preis</th>
+        <th scope="col" style="width: 15%"></th>
       </tr>
     </thead>
     <tbody id="productsTable">

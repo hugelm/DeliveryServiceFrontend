@@ -17,7 +17,7 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <ul class="navbar-nav me-auto mb-2 mb-lg-0">
             <li class="nav-item">
-              <a class="nav-link" href="./order.html">Speisekarte</a>
+              <a class="nav-link active" aria-current="page" href="./index.html">Speisekarte</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="./myorder.html">Meine Bestellungen</a>
@@ -26,7 +26,7 @@
               <a class="nav-link" href="./overview.html">Bestellübersicht</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="./product.html">Produktverwaltung</a>
+              <a class="nav-link" href="./product.html">Produktverwaltung</a>
             </li>
           </ul>
           <form class="d-flex">
@@ -38,7 +38,7 @@
     </nav>
   </header>
   <div class="p-5 text-center bg-dark">
-    <h1 class="mb-3 text-white">aktuell im Verkauf:</h1>
+    <h1 class="mb-3 text-white">Speisekarte</h1>
   </div>
   <table class="table table-hover table-dark">
     <thead>
@@ -46,11 +46,11 @@
         <th scope="col" style="width: 10%">#</th>
         <th scope="col" style="width: 10%">Gericht</th>
         <th scope="col" style="width: 50%">Beschreibung</th>
+        <th scope="col" style="width: 5%">Menge</th>
         <th scope="col" style="width: 5%">Preis</th>
-        <th scope="col" style="width: 5%"></th>
       </tr>
     </thead>
-    <tbody id="productsTable">
+    <tbody id="productsTable" class="table-dark">
     </tbody>
   </table>
 
@@ -61,34 +61,49 @@
 
         <div class="form-outline">
           <input type="text" id="name" class="form-control form-control-lg" />
-          <label class="form-label" for="name">Produktname</label>
+          <label class="form-label" for="firstName">Name</label>
         </div>
 
       </div>
-      <div class="col-md-7">
+      <div class="col-md-3">
 
         <div class="form-outline">
-          <input type="text" id="desc" class="form-control form-control-lg" />
-          <label class="form-label" for="desc">Beschreibung</label>
+          <input type="text" id="phone" class="form-control form-control-lg" />
+          <label class="form-label" for="lastName">Telefonnummer</label>
         </div>
 
       </div>
       <div class="col-md-2">
 
         <div class="form-outline">
-          <input type="text" id="price" class="form-control form-control-lg" />
-          <label class="form-label" for="price">Preis in EUR</label>
+          <input type="text" id="zipcode" class="form-control form-control-lg" />
+          <label class="form-label" for="lastName">Postleitzahl</label>
         </div>
 
-     </div>
+      </div>
+      <div class="col-md-3">
 
+        <div class="form-outline">
+          <input type="text" id="street" class="form-control form-control-lg" />
+          <label class="form-label" for="lastName">Straße</label>
+        </div>
+
+      </div>
+      <div class="col-md-1">
+
+        <div class="form-outline">
+          <input type="text" id="housenumber" class="form-control form-control-lg" />
+          <label class="form-label" for="lastName">Hausnummer</label>
+        </div>
+
+      </div>
     </div>
     <div class="row">
-        <button onclick="addProduct()" type="button" class="btn btn-success btn-lg btn-block">neues Produkt anlegen</button>
+        <button onclick="order()" type="button" class="btn btn-success btn-lg btn-block">Bestellen</button>
     </div>
   </div>
 
-<script src="../js/product.js"></script>
+<script src="../js/order.js"></script>
 
 </body>
 </html> 
