@@ -36,23 +36,10 @@
         </div>
       </div>
     </nav>
-  </header>
+  </header>  
   <div class="p-5 text-center bg-dark">
     <h1 class="mb-3 text-white">aktuell im Verkauf:</h1>
   </div>
-  <table class="table table-hover table-dark">
-    <thead>
-      <tr>
-        <th scope="col" style="width: 10%">#</th>
-        <th scope="col" style="width: 10%">Gericht</th>
-        <th scope="col" style="width: 50%">Beschreibung</th>
-        <th scope="col" style="width: 5%">Preis</th>
-        <th scope="col" style="width: 5%"></th>
-      </tr>
-    </thead>
-    <tbody id="productsTable">
-    </tbody>
-  </table>
 
   <!-- order information -->
   <div class="card-body p-4 p-md-5 bg-dark text-white">
@@ -87,6 +74,20 @@
         <button onclick="addProduct()" type="button" class="btn btn-success btn-lg btn-block">neues Produkt anlegen</button>
     </div>
   </div>
+
+  <table class="table table-hover table-dark">
+    <thead>
+      <tr>
+        <th scope="col" style="width: 10%">#</th>
+        <th scope="col" style="width: 10%">Gericht</th>
+        <th scope="col" style="width: 50%">Beschreibung</th>
+        <th scope="col" style="width: 5%">Preis</th>
+        <th scope="col" style="width: 5%"></th>
+      </tr>
+    </thead>
+    <tbody id="productsTable">
+    </tbody>
+  </table>
 
 <script src="./js/product.js"></script>
 

@@ -24,7 +24,6 @@ function getOrders(){
     }
   
     async function getPromiseOfAllProducts() {
-          console.log('http://localhost:8080/delivery?name='+name);
           return fetch('http://localhost:8080/delivery?name='+name, {
           method: 'GET',
         })
