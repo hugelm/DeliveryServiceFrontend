@@ -8,7 +8,7 @@
 </head>
 <body>
   <header>
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
       <div class="container-fluid">
         <a class="navbar-brand" href="#">Lieferservice</a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -54,14 +54,10 @@
           <div class="col-md-4">
     
             <div class="form-outline">
-              <input type="text" id="zipcode" class="form-control form-control-lg" />
-              <label class="form-label" for="lastName">Postleitzahl</label>
+              <button onclick="getOrders()" type="button" class="btn btn-success btn-lg btn-block">Bestellungen abfragen</button>
             </div>
     
           </div>
-        </div>
-        <div class="row">
-            <button onclick="order()" type="button" class="btn btn-success btn-lg btn-block">Bestellungen abfragen</button>
         </div>
       </div>
   <table class="table table-hover table-dark">
@@ -76,7 +72,7 @@
     </tbody>
   </table>
 
-<script src="../js/overview.js"></script>
+<script src="./js/myorder.js"></script>
 
 </body>
 </html> 
